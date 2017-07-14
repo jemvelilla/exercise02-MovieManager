@@ -1,11 +1,9 @@
 @include('user.partials.home-nav')
 <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-<h1>Add a Movie/Tv Show</h1>
-          <hr>
-
-
-<div class="section2">
-	<form action="/post" method="POST">
+	<h1 class="album-caption">Add a Movie/TV Show</h1>
+	<hr>
+	<div class="section2">
+		<form action="/post" method="POST" enctype="multipart/form-data">
 
 		{{ csrf_field() }}
 
@@ -64,47 +62,57 @@
 			<table class="table-genre">
 				<tr>Select genre</tr>
 				<tr>
-					<th><input name="genre"type="checkbox" value="1">Action</th>
-					<th><input name="genre" type="checkbox" value="2">Costume</th>
-					<th><input name="genre" type="checkbox" value="3">Drama</th>
-					<th><input name="genre" type="checkbox" value="4">History</th>
-					<th><input name="genre" type="checkbox" value="5">Mystery</th>
+					<th><input name="genre[]"type="checkbox" value="Action">Action</th>
+					<th><input name="genre[]" type="checkbox" value="Costume">Costume</th>
+					<th><input name="genre[]" type="checkbox" value="Drama">Drama</th>
+					<th><input name="genre[]" type="checkbox" value="History">History</th>
+					<th><input name="genre[]" type="checkbox" value="Mystery">Mystery</th>
 				</tr>
 				<tr>
-					<th><input name="genre" type="checkbox" value="6">Sport</th>
-					<th><input name="genre" type="checkbox" value="7">Western</th>
-					<th><input name="genre" type="checkbox" value="8">Adventure</th>
-					<th><input name="genre" type="checkbox" value="9">Comedy</th>
-					<th><input name="genre" type="checkbox" value="10">Family</th>
+					<th><input name="genre[]" type="checkbox" value="Sport">Sport</th>
+					<th><input name="genre[]" type="checkbox" value="Western">Western</th>
+					<th><input name="genre[]" type="checkbox" value="Adventure">Adventure</th>
+					<th><input name="genre[]" type="checkbox" value="Comedy">Comedy</th>
+					<th><input name="genre[]" type="checkbox" value="Family">Family</th>
 				</tr>
 				<tr>
-					<th><input name="genre" type="checkbox" value="11">Horror</th>
-					<th><input name="genre" type="checkbox" value="12">Reality-TV</th>
-					<th><input name="genre" type="checkbox" value="13">Thriller</th>
-					<th><input name="genre" type="checkbox" value="14">Animation</th>
-					<th><input name="genre" type="checkbox" value="15">Crime</th>
+					<th><input name="genre[]" type="checkbox" value="Horror">Horror</th>
+					<th><input name="genre[]" type="checkbox" value="Reality-TV">Reality-TV</th>
+					<th><input name="genre[]" type="checkbox" value="Thriller">Thriller</th>
+					<th><input name="genre[]" type="checkbox" value="Animation">Animation</th>
+					<th><input name="genre[]" type="checkbox" value="Crime">Crime</th>
 				</tr>
 				<tr>
-					<th><input name="genre" type="checkbox" value="16">Fantasy</th>
-					<th><input name="genre" type="checkbox" value="17">Kungfu</th>
-					<th><input name="genre" type="checkbox" value="18">Romance</th>
-					<th><input name="genre" type="checkbox" value="19">Biography</th>
-					<th><input name="genre" type="checkbox" value="20">Documentary</th>
+					<th><input name="genre[]" type="checkbox" value="Fantasy">Fantasy</th>
+					<th><input name="genre[]" type="checkbox" value="Kungfu">Kungfu</th>
+					<th><input name="genre[]" type="checkbox" value="Romance">Romance</th>
+					<th><input name="genre[]" type="checkbox" value="Biography">Biography</th>
+					<th><input name="genre[]" type="checkbox" value="Documentary">Documentary</th>
 					
 				</tr>
 				<tr>
-					<th><input name="genre" type="checkbox" value="21">Game-Show</th>
-					<th><input name="genre" type="checkbox" value="22">Music</th>
-					<th><input name="genre" type="checkbox" value="23">War</th>
-					<th><input name="genre" type="checkbox" value="24">Sci-Fi</th>
+					<th><input name="genre[]" type="checkbox" value="Game-Show">Game-Show</th>
+					<th><input name="genre[]" type="checkbox" value="Music">Music</th>
+					<th><input name="genre[]" type="checkbox" value="Sci-Fi">Sci-Fi</th>
+					<th><input name="genre[]" type="checkbox" value="War">War</th>
 				</tr>
 			</table>
 			<br>
 			<table cellpadding="1" cellspacing="1">
+				<tr>Actor(s)</tr><br><br>
 				<tr>
-					<td>Actors&nbsp</td>
-					<td><input class="w3-input w3-border w3-round-xxlarge" type="text"
-						name="actors" placeholder="Actors"></td>
+					<td>
+						<div class="row">
+        					<div class="form-group form-group-options col-md-12">
+    							<div class="input-group input-group-option col-xs-12">
+    								<input type="text" name="actor[]" class="form-control" placeholder="Name">
+    								<span class="input-group-addon input-group-addon-remove">
+    									<span class="glyphicon glyphicon-remove"></span>
+    								</span>
+    							</div>
+    						</div>
+    					</div>
+					</td>
 				</tr>
 			</table>
 			<br>
@@ -120,7 +128,7 @@
 			<br>
 			<table cellpadding="1" cellspacing="1">
 				<tr>
-					<td><input type="file" name="pic" accept="image/*"></td>
+					<td><input type="file" name="image" accept="image/*"></td>
 				</tr>
 			</table>
 

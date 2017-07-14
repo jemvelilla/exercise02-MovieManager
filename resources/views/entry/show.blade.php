@@ -11,5 +11,6 @@
 @section('content')
 	
 	@include('entry.partials.form-show')
-		
+		@include('entry.partials.album-extra')
+	
 @endsection

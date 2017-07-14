@@ -20,12 +20,32 @@ class CreateGenresTable extends Migration
             $table->timestamps();
         });
         
-        	DB::table('genres')->insert(
-        	array(
-        	'name' => 'Action',
-        	'description' => 'Action'
-        	)
-        	);
+        	DB::table('genres')->insert([
+				['name' => 'Action', 'description' => 'Action'],
+				['name' => 'Costume', 'description' => 'Action'],
+				['name' => 'Drama', 'description' => 'Drama'],
+				['name' => 'History', 'description' => 'History'],
+				['name' => 'Mystery', 'description' => 'Mystery'],
+				['name' => 'Sport', 'description' => 'Sport'],
+				['name' => 'Western', 'description' => 'Western'],
+				['name' => 'Adventure', 'description' => 'Adventure'],
+				['name' => 'Comedy', 'description' => 'Comedy'],
+				['name' => 'Family', 'description' => 'Family'],
+				['name' => 'Horror', 'description' => 'Horror'],
+				['name' => 'Reality-TV', 'description' => 'Reality-TV'],
+				['name' => 'Thriller', 'description' => 'Thriller'],
+				['name' => 'Animation', 'description' => 'Animation'],
+				['name' => 'Crime', 'description' => 'Crime'],
+				['name' => 'Fantasy', 'description' => 'Fantasy'],
+				['name' => 'Kungfu', 'description' => 'Kungfu'],
+				['name' => 'Romance', 'description' => 'Romance'],
+				['name' => 'Biography', 'description' => 'Biography'],
+				['name' => 'Documentary', 'description' => 'Documentary'],
+				['name' => 'Game-Show', 'description' => 'Game-Show'],
+				['name' => 'Music', 'description' => 'Music'],
+				['name' => 'Sci-Fi', 'description' => 'Sci-Fi'],
+				['name' => 'War', 'description' => 'War'],
+        	]);
     }
 
     /**

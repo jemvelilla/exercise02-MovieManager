@@ -7,14 +7,19 @@ use App\Entry;
 
 class UserController extends Controller
 {
+	
+	public function __construct(){
+	
+		$this->middleware('auth');
+	
+	}
+	
     public function index(){
-    	$entries = Entry::all();
+    	
+    	$entries = Entry::where('user_id', auth()->id())->get();
     	
     	return view('user/home', compact('entries'));
 	}
-	
-	public function add(){
-		 
-		return view('entry/add');
-	}	
+
+
 }

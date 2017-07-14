@@ -12,7 +12,7 @@ class CreateEntriesTable extends Migration
      * @return void
      */
     public function up()
-    {
+    {	
         Schema::create('entries', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title', 100);
@@ -20,10 +20,9 @@ class CreateEntriesTable extends Migration
             $table->smallInteger('release_year');
             $table->integer('rating');
             $table->string('image_url', 100);
-            $table->bigInteger('genre_id');
             $table->bigInteger('user_id');
             $table->timestamps();
-            $table->integer('entry_type_id_id');
+            $table->integer('type_id');
         });
     }
 

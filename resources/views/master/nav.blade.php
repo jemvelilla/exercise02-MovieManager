@@ -1,82 +1,70 @@
 <nav class="navbar-default navbar-inverse">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
-	      <a class="navbar-brand" href="/">Movie Manager</a>
+	      <a class="navbar-brand" href="/"><img src="/images/movieseries.png" alt="Movie Manager" /></a>
 	    </div>
 	    <ul class="nav navbar-nav">
 	      <li><a href="/">Home</a></li>
-	      <li class="dropdown">
+	      <li style="color:black;">
         	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Genre<b class="caret"></b></a>
         	    <ul class="dropdown-menu multi-column columns-3">
 		            <div class="row">
 			            <div class="col-sm-3">
 				            <ul class="multi-column-dropdown">
-					            <li><a href="#">Action</a></li>
-					            <li><a href="#">Costume</a></li>
-					            <li><a href="#">Drama</a></li>
-					            <li><a href="#">History</a></li>
-					            <li><a href="#">Mystery</a></li>
-					            <li><a href="#">Sport</a></li>
-					            <li><a href="#">Western</a></li>
+					            <li><a href="/genre/action" style="color:black;">Action</a></li>
+					            <li><a href="/genre/costume" style="color:black;">Costume</a></li>
+					            <li><a href="/genre/drama" style="color:black;">Drama</a></li>
+					            <li><a href="/genre/history" style="color:black;">History</a></li>
+					            <li><a href="/genre/mystery" style="color:black;">Mystery</a></li>
+					            <li><a href="/genre/sport" style="color:black;">Sport</a></li>
+					            <li><a href="/genre/western" style="color:black;">Western</a></li>
 				            </ul>
 			            </div>
 			            <div class="col-sm-3">
 				            <ul class="multi-column-dropdown">
-					            <li><a href="#">Adventure</a></li>
-					            <li><a href="#">Comedy</a></li>
-					            <li><a href="#">Family</a></li>
-					            <li><a href="#">Horror</a></li>
-					            <li><a href="#">Reality-TV</a></li>
-					            <li><a href="#">Thriller</a></li>
+					            <li><a href="/genre/adventure" style="color:black;">Adventure</a></li>
+					            <li><a href="/genre/comedy" style="color:black;">Comedy</a></li>
+					            <li><a href="/genre/family" style="color:black;">Family</a></li>
+					            <li><a href="/genre/horror" style="color:black;">Horror</a></li>
+					            <li><a href="/genre/reality-tv" style="color:black;">Reality-TV</a></li>
+					            <li><a href="/genre/thriller" style="color:black;">Thriller</a></li>
 				            </ul>
 			            </div>
 			            <div class="col-sm-3">
 				            <ul class="multi-column-dropdown">
-					            <li><a href="#">Animation</a></li>
-					            <li><a href="#">Crime</a></li>
-					            <li><a href="#">Fantasy</a></li>
-					            <li><a href="#">Kungfu</a></li>
-					            <li><a href="#">Romance</a></li>
-					            <li><a href="#">TV Show</a></li>
-				            </ul>
+					            <li><a href="/genre/animation" style="color:black;">Animation</a></li>
+					            <li><a href="/genre/crime" style="color:black;">Crime</a></li>
+					            <li><a href="/genre/fantasy" style="color:black;">Fantasy</a></li>
+					            <li><a href="/genre/kungfu" style="color:black;">Kungfu</a></li>
+					            <li><a href="/genre/romance" style="color:black;">Romance</a></li>
+								<li><a href="/genre/biography" style="color:black;">Biography</a></li>
+								
+					        </ul>
 			            </div>
 			            <div class="col-sm-3">
 				            <ul class="multi-column-dropdown">
-					            <li><a href="#">Biography</a></li>
-					            <li><a href="#">Documentary</a></li>
-					            <li><a href="#">Game-Show</a></li>
-					            <li><a href="#">Music</a></li>
-					            <li><a href="#">Sci-Fi</a></li>
-					            <li><a href="#">War</a></li>
+					            <li><a href="/genre/documentary" style="color:black;">Documentary</a></li>
+					            <li><a href="/genre/game-show" style="color:black;">Game-Show</a></li>
+					            <li><a href="/genre/music" style="color:black;">Music</a></li>
+					            <li><a href="/genre/sci-fi" style="color:black;">Sci-Fi</a></li>
+					            <li><a href="/genre/war" style="color:black;">War</a></li>
 				            </ul>
 			            </div>
 		            </div>
 	            </ul>
 			</li>
-	      <li><a href="/view/{{1}}">Movies</a></li>
-	      <li><a href="/view/{{2}}">TV Series</a></li>
+	      <li><a href="/entry_type/movies">Movies</a></li>
+	      <li><a href="/entry_type/tv series">TV Series</a></li>
 	    </ul>
-	    
-	    @yield('login')
-	    
-	    <form class="navbar-form navbar-right">
-	      <div class="input-group">
-	        <input type="text" class="form-control" size="30" placeholder="Find movies, tv series and more...">
-			<div class="input-group-btn">
-	        	<select class="form-control" id="sel1">
-    				<option>All</option>
-    				<option>Title</option>
-    				<option>Release Year</option>
-    				<option>Rating</option>
-    				<option>Genre</option>
-    				<option>Type</option>
-    				<option>Actors</option>
-  				</select>
-	          <button class="btn btn-default" type="submit">
-	            <i class="glyphicon glyphicon-search"></i>
-	          </button>
-	        </div>
-	      </div>
-	    </form>
-	  </div>
-	</nav>	
+			
+			
+			@include('search.partials.search-bar')	
+			
+			@if(Auth::check())	
+				 @yield('profile')
+			@else
+				 @yield('login')
+			@endif
+				
+	</div> 
+</nav>	

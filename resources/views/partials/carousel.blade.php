@@ -14,7 +14,7 @@
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner" role="listbox">
 		<div class="item active">
-			<img src="images/wonder-woman.jpg" alt="Slide 1">
+			<img src="images/banner/wonder-woman.png" alt="Slide 1">
 			<div class="carousel-caption">
 				<h3></h3>
 			</div>
@@ -22,28 +22,28 @@
 
 
 		<div class="item">
-			<img src="images/spiderman.jpg" alt="Slide 2">
+			<img src="images/banner/spiderman.jpg" alt="Slide 2">
 			<div class="carousel-caption">
 				<h3></h3>
 			</div>
 		</div>
 
 		<div class="item">
-			<img src="images/logan.jpg" alt="Slide 3">
+			<img src="images/banner/power-rangers.jpg" alt="Slide 3">
 			<div class="carousel-caption">
 				<h3></h3>
 			</div>
 		</div>
 
 		<div class="item">
-			<img src="images/despicable-me.jpg" alt="Slide 4">
+			<img src="images/banner/guardians-of-the-galaxy.jpg" alt="Slide 4">
 			<div class="carousel-caption">
 				<h3></h3>
 			</div>
 		</div>
 
 		<div class="item">
-			<img src="images/shivaay.jpg" alt="Slide 5">
+			<img src="images/banner/the-mummy.jpg" alt="Slide 5">
 			<div class="carousel-caption">
 				<h3></h3>
 			</div>

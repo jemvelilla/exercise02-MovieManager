@@ -7,6 +7,12 @@
 	
 @endsection
 
+@section('profile')
+	
+	@include('partials.nav-profile')	
+	
+@endsection
+
 @section('content')
 	
   	@include('partials.carousel')

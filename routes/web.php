@@ -1,16 +1,27 @@
 <?php
 
-Route::get('/', 'EntryController@index');
+use App\Http\Controllers\UserController;
+Route::get('/', 'EntryController@index')->name('home'); //welcome page
+Route::get('/show/{entry}', 'EntryController@show'); //show all entries (at the home page)
+Route::get('/add', 'EntryController@create'); //redirect to add page
+Route::get('/post', 'EntryController@store'); //store an entry
+Route::post('/post', 'EntryController@store'); //store an entry
 
-Route::get('/show/{entry}', 'EntryController@show');
+Route::get('/genre/{genre}', 'GenreController@show'); //show entries by genre
 
-Route::get('/view/{type}', 'EntryController@showType');
+Route::get('/entry_type/{type}', 'TypeController@show'); //show entries by type
 
-Route::post('home', 'UserController@index');
+Route::get('/home', 'UserController@index'); //authenticate if logged on
+Route::post('/home', 'UserController@index'); //login
+Route::get('/profile', 'UserController@index'); //display entries created by a logged on user
 
-Route::get('profile', 'UserController@index');
+Route::get('/register', 'RegistrationController@store');
+Route::post('/register', 'RegistrationController@store');
 
-Route::get('add', 'UserController@add');
+Route::get('login', 'SessionsController@create');
+Route::post('login', [ 'as' => 'login', 'uses' => 'SessionsController@store']);
+Route::get('/logout', 'SessionsController@destroy');
 
-Route::post('post', 'EntryController@store');
-
+Route::post('/search', 'SearchController@index');
+Route::get('/search', 'SearchController@index'); 
+Route::get('/search/{actor}', 'SearchController@actor');
