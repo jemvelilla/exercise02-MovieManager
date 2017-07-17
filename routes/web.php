@@ -6,6 +6,7 @@ Route::get('/show/{entry}', 'EntryController@show'); //show all entries (at the 
 Route::get('/add', 'EntryController@create'); //redirect to add page
 Route::get('/post', 'EntryController@store'); //store an entry
 Route::post('/post', 'EntryController@store'); //store an entry
+Route::get('/view/{entry}', 'EntryController@view'); //view a specific entry
 
 Route::get('/genre/{genre}', 'GenreController@show'); //show entries by genre
 
@@ -23,5 +24,6 @@ Route::post('login', [ 'as' => 'login', 'uses' => 'SessionsController@store']);
 Route::get('/logout', 'SessionsController@destroy');
 
 Route::post('/search', 'SearchController@index');
-Route::get('/search', 'SearchController@index'); 
+Route::get('/search', 'SearchController@index');
+Route::get('/search/all', 'SearchController@find');
 Route::get('/search/{actor}', 'SearchController@actor');

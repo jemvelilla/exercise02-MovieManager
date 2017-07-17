@@ -26,7 +26,7 @@
 					</ul>
 				</div>
           	@endforeach	
-          	
+          	<div class="col-md-9"></div>
         </div>
         
         <br>

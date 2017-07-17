@@ -13,8 +13,10 @@
     <link href="/css/style.css" rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <script src="/js/navbar.js"></script>
-     <script src="/js/add.js"></script>
-
+    <script src="/js/add.js"></script>
+    <script src="/js/fade.js"></script>
+	<script src="/js/album.js"></script>
+	<script src="/js/carousel.js"></script>
   </head>
   <body>
 	

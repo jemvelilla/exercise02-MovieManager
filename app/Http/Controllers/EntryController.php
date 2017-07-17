@@ -13,13 +13,13 @@ class EntryController extends Controller
     
 	public function __construct(){
 		
-		$this->middleware('auth')->except(['index', 'show']);
+		$this->middleware('auth')->except(['index', 'show', 'view']);
 	
 	}
 	
 	public function index(){
-		$entries_byYear = Entry::where('release_year', '2017')->paginate(8);
-		$entries_byCreation = Entry::orderBy('created_at', 'desc')->paginate(8);	
+		$entries_byYear = Entry::where('release_year', '2017')->paginate(4);
+		$entries_byCreation = Entry::orderBy('created_at', 'desc')->paginate(4);	
 	
 		return view('entry/welcome', compact('entries_byYear', 'entries_byCreation'));
 	}
@@ -28,6 +28,21 @@ class EntryController extends Controller
 		
 		$entries = Entry::orderByRaw("RAND()")->paginate(4);
 		return view('entry/show', compact('entries', 'entry'));
+	}
+	
+	public function view($entry){
+		
+		if($entry == 'release_year'){
+			$entries = Entry::where($entry, '2017')->paginate(8);
+			$value = "Latest Movies/TV Shows";
+		} else if($entry == 'rating'){
+			$entries = Entry::where($entry, '10')->paginate(8);
+			$value = "Top Rated Movies/TV Shows";
+		} else if($entry == 'created_at'){
+			$entries = Entry::orderBy($entry, 'dec')->paginate(8);
+			$value = "Recently Added Movies/TV Shows";
+		}
+		return view('entry/view', compact('entries', 'value'));
 	}
 	
 	public function create(){
@@ -43,7 +58,6 @@ class EntryController extends Controller
 			'release_year' => 'required',
 			'rating' => 'required',
 			'genre' => 'required',
-			'actor[]' => 'required',
 			'image' => 'required',
 		]);
 		
